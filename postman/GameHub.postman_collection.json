@@ -1,0 +1,618 @@
+{
+	"info": {
+		"_postman_id": "d458afda-c010-4379-ae9c-e8e9ef0fb412",
+		"name": "GameHub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26969654"
+	},
+	"item": [
+		{
+			"name": "admin-login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9nYW1laHViIiwiaWF0IjoxNzUwOTY0NjIzLCJleHAiOjE3NTA5NjgyMjN9.WSfhAan6tkM6CtyOhf5uREwMQUC-M8hBHTxvki-kH-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin_gamehub\",\r\n    \"password\": \"adminpass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "player-register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"playeruser5\",\r\n    \"password\": \"playerpassword\",\r\n    \"email\": \"player5@example.com\",\r\n    \"role\": \"PLAYER\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/auth/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "player-login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9nYW1laHViIiwiaWF0IjoxNzUwOTYwMDI1LCJleHAiOjE3NTA5NjM2MjV9._MZ_jPUZL_9UU4TOWOjmNzsmrq7OhWV_wThjyxX58Jg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"playeruser4\",\r\n    \"password\": \"playerpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-info-id/me(token)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwbGF5ZXJ1c2VyMSIsImlhdCI6MTc1MTEyOTY3MywiZXhwIjoxNzUxMTMzMjczfQ.N3-l8G6_F9YZ46mRTIIOBng9PgffUluMuu7orEeJXLI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/users/me",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-tournament-admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9nYW1laHViIiwiaWF0IjoxNzUxMTI5Nzc1LCJleHAiOjE3NTExMzMzNzV9.QgSP_ju8YhLeADujif_2ahBnyAH28pXiXcVwlqEzFyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Torneo de Prueba Ranking 2\",\r\n    \"maxPlayers\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/tournaments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"tournaments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-tournaments-info",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/tournaments",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"tournaments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "generate-matches",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9nYW1laHViIiwiaWF0IjoxNzUxMTI5Nzc1LCJleHAiOjE3NTExMzMzNzV9.QgSP_ju8YhLeADujif_2ahBnyAH28pXiXcVwlqEzFyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"roundNumber\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/matches/generate/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"matches",
+						"generate",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-matches-info",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9nYW1laHViIiwiaWF0IjoxNzUwODc0NDgzLCJleHAiOjE3NTA4NzgwODN9.3hBEpaHYU9PbG4sduTSqp9USqLjSNo4xie7mDWFIgY0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/matches/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"matches",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tournament-join",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwbGF5ZXJ1c2VyNSIsImlhdCI6MTc1MTEyOTk3NCwiZXhwIjoxNzUxMTMzNTc0fQ.A9NHp3zbyOFgL_0TOAqK09zfzDNzamulmW3GEAkKzok",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/tournaments/2/join",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"tournaments",
+						"2",
+						"join"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send-messages-tournament",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9nYW1laHViIiwiaWF0IjoxNzUxMTI5Nzc1LCJleHAiOjE3NTExMzMzNzV9.QgSP_ju8YhLeADujif_2ahBnyAH28pXiXcVwlqEzFyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"¡Hola a todos en el torneo desde PLAYE15b!1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/matches/1/messages",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"matches",
+						"1",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all-messges-tournament",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9nYW1laHViIiwiaWF0IjoxNzUxMTI5Nzc1LCJleHAiOjE3NTExMzMzNzV9.QgSP_ju8YhLeADujif_2ahBnyAH28pXiXcVwlqEzFyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"¡Hola a todos en el torneo desde PLAYER_b!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/matches/1/messages",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"matches",
+						"1",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all-messges-matches",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9nYW1laHViIiwiaWF0IjoxNzUxMTI5Nzc1LCJleHAiOjE3NTExMzMzNzV9.QgSP_ju8YhLeADujif_2ahBnyAH28pXiXcVwlqEzFyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"¡Buena suerte, PLAYER_B!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/matches/2/messages",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"matches",
+						"2",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send-messages-matches",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9nYW1laHViIiwiaWF0IjoxNzUxMTI5Nzc1LCJleHAiOjE3NTExMzMzNzV9.QgSP_ju8YhLeADujif_2ahBnyAH28pXiXcVwlqEzFyY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"¡Buena suerte, PLAYER_B!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/matches/2/messages",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"matches",
+						"2",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put-winner-matches",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbl9nYW1laHViIiwiaWF0IjoxNzUxMTMwMzI5LCJleHAiOjE3NTExMzM5Mjl9.R5WkD04U1VAasGPDx06mu88uuBoOADP4HJq-2lgCuLo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"winnerId\": 5,\r\n    \"result\": \"PLAYER1_WINS\" // O \"PLAYER1_WINS\" según tu enum Result\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/matches/2/result",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"matches",
+						"2",
+						"result"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-rankings-status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/tournaments/2/ranking",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"tournaments",
+						"2",
+						"ranking"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

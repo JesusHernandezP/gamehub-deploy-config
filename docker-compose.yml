@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: gamehub_db_container
+    restart: always
+    environment:
+      POSTGRES_DB: GameHub # Nombre de la base de datos
+      POSTGRES_USER: postgres # Usuario de la base de datos
+      POSTGRES_PASSWORD: 1234 # Contraseña del usuario
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+        build: .
+        container_name: gamehub_app_container # Nombre descriptivo para el contenedor de la app
+        ports:
+          - "8080:8080"
+        depends_on:
+          db:
+            condition: service_healthy
+        environment:
+          SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/GameHub
+          SPRING_DATASOURCE_USERNAME: postgres
+          SPRING_DATASOURCE_PASSWORD: 1234
+
+
+
+volumes:
+  db_data:
