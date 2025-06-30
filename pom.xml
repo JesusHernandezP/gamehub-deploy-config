@@ -110,6 +110,20 @@
                     </excludes>
                 </configuration>
             </plugin>
+
+            <!-- Configuración para maven-resources-plugin para manejar la codificación de application.properties -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version> <!-- Asegúrate de que esta versión coincida con la del error en tus logs -->
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <!-- Evita que el plugin intente filtrar los archivos .properties, lo que a veces causa problemas de codificación -->
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>properties</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
